@@ -1,0 +1,22 @@
+using namespace std;
+#include <iostream>
+#include <string>
+
+int main() {
+    string word;
+    cout << "Enter a word: ";
+    cin >> word;
+
+    int length = strlen(word);
+
+    // Swap characters using loop
+    for (int i = 0; i < length / 2; i++) {
+        char temp = word[i];
+        word[i] = word[length - i - 1];
+        word[length - i - 1] = temp;
+    }
+
+    cout << "Reversed word: " << word;
+
+    return 0;
+}
