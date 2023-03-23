@@ -1,0 +1,40 @@
+using namespace std;
+#include <iostream>
+
+void isPrime(int num) {
+    if (num <= 1) {
+        return false;
+    }
+    for (int i = 2; i <= num / 2; i++) {
+        if (num % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main() {
+    int n;
+    cout << "Enter number of values: ";
+    cin >> n;
+
+    int primeCount = 0;
+    int compositeCount = 0;
+
+    for (int i = 0; i < n; i++) {
+        int num;
+        cout << "Enter a number: ";
+        cin >> num;
+
+        if (isPrime(num)) {
+            primeCount++;
+        } else {
+            compositeCount++;
+        }
+    }
+
+    cout << "Total prime numbers: " << primeCount << endl;
+    cout << "Total composite numbers: " << compositeCount << endl;
+
+    return 0;
+}
